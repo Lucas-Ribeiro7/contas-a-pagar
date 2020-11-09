@@ -14,9 +14,11 @@
     <?php
         $descricao = $_POST['descricao'];
         $valor = $_POST['valor'];
-        $dt_nascimento = $_POST['vencimento'];
-
-        
+        $dt_vencimento = $_POST['vencimento'];
+        $p->inserirDados($descricao, $valor, $dt_vencimento);
+        if($res = true){
+            echo "<h2>Cadastrado com Sucesso!</h2>";
+        }
     ?>
 </body>
 </html>
