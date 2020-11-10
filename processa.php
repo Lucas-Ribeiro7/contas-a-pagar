@@ -17,7 +17,7 @@
         $dt_vencimento = $_POST['vencimento'];
         $p->inserirDados($descricao, $valor, $dt_vencimento);
         if($res = true){
-            echo "<h2>Cadastrado com Sucesso!</h2>";
+            echo "<h2>Cadastramento realizado com Sucesso!</h2>";
         }
     ?>
 </body>
