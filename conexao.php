@@ -18,7 +18,13 @@
             }            
         }
         public function inserirDados($descricao, $valor, $vencimento){
-            $this->pdo->query("INSERT INTO pagar (descricao, valor, dt_vencimento) VALUES ('$descricao', $valor, '$vencimento')");
-            return $res = true;
+            try{
+                $this->pdo->query("INSERT INTO pagar (descricao, valor, dt_vencimento) VALUES ('$descricao', $valor, '$vencimento')");
+                return $res = true;
+            }catch(PDOException $e){
+                echo "<p>[ERRO] Falha ao salvar Dados!</p>";
+            } 
         }
+        
+
     }

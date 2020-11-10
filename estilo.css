@@ -1,13 +1,14 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     margin: auto;
-    width: 500px;
+    width: 800px;
     padding: 50px;
 }
 div.cadastro{
     padding: 20px;
+    width: 500px;
     margin: auto;
-    background-color: rgb(112, 87, 136);
+    background-color: rgb(169, 160, 177);
     color: black;
 }
 div.contas{
@@ -18,4 +19,15 @@ div.contas{
 }
 td, tr{
     background-color: burlywood;
+}
+div.menu{
+    background-color: rgb(140, 140, 155);
+    width: 800px;
+    padding: 30px;
+    margin: auto;
+    color: chocolate;
+    text-align: center;
+}
+a{
+    text-decoration: none;
 }

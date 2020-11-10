@@ -7,10 +7,16 @@
     <title>Contas a Pagar</title>
 </head>
 <body>
+    <div class="menu">
+        <a href="index.php">HOME</a> |
+        <a href="dados.php">TABELAS DE CONTAS</a> |
+        <a href="cadastro.php">CADASTRAMENTO DE CONTAS</a>
+    </div>
+    <br>
     <div class="contas">
         <table>
             <td>Descrição</td>
-            <td>Valor</td>
+            <td>Valor da Conta</td>
             <td>Data de Vencimento</td>
         </table>
     </div>

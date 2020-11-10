@@ -7,23 +7,12 @@
     <title>Contas a Pagar</title>
 </head>
 <body>
-    <div class="cadastro">
-        <form action="processa.php" method="POST">
-            <label>Descrição da Conta:</label>
-            <br>
-            <input type="text" name="descricao">
-            <br>
-            <label>Valor:</label>
-            <br>
-            <input type="number" name="valor">
-            <br>
-            <label>Data de Vencimento</label>
-            <br>
-            <input type="date" name="vencimento">
-            <br>
-            <br>
-            <input type="submit" value="Salvar">
-        </form>
+    <div class="menu">
+        <a href="index.php">HOME</a> |
+        <a href="dados.php">TABELAS DE CONTAS</a> |
+        <a href="cadastro.php">CADASTRAMENTO DE CONTAS</a>
     </div>
+    <br>
+      
 </body>
 </html>
