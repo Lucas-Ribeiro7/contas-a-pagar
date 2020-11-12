@@ -5,25 +5,19 @@
         public function __construct($nome_db, $host, $user, $senha){
             $this->pdo = new PDO("mysql:dbname=$nome_db; host=$host", $user, $senha);
         }
-
-        public function salvarDados($descricao, $valor, $vencimento){
-            try{
-                $cmd = $this->pdo->prepare("INSERT INTO contas (descricao, valor, dt_vencimento) VALUES (:d, :v, :ve)");
-                $cmd->bindValue(":d", $descricao);
-                $cmd->bindValue(":v", $valor);
-                $cmd->bindValue(":ve", $vencimento);
-                $cmd->execute(); 
-            }catch(PDOException $e){
-                echo "<p>[ERRO] Falha ao salvar Dados!</p>";
-            }            
+        public function inserirDados($codigo, $descricao, $valor, $vencimento){
+            $sql = $this->pdo->query("SELECT id FROM pagar WHERE codigo = '$codigo'");
+            if($sql->rowCount() > 0){
+                echo "<h2>Conta já cadastrada!</h2>";
+            }else{
+                $this->pdo->query("INSERT INTO pagar (codigo, descricao, valor, dt_vencimento) VALUES ('$codigo','$descricao', $valor, '$vencimento')");
+                echo "<h2>Cadastramento realizado com Sucesso!</h2>";
+            }
+             
         }
-        public function inserirDados($descricao, $valor, $vencimento){
-            try{
-                $this->pdo->query("INSERT INTO pagar (descricao, valor, dt_vencimento) VALUES ('$descricao', $valor, '$vencimento')");
-                return $res = true;
-            }catch(PDOException $e){
-                echo "<p>[ERRO] Falha ao salvar Dados!</p>";
-            } 
+        public function buscarDados(){
+            $res = array();
+            $cmd = $this->pdo->query('SELECT * ');
         }
         
 

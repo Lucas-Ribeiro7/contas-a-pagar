@@ -15,6 +15,7 @@
     <br>
     <div class="contas">
         <table>
+            <td>Código</td>
             <td>Descrição</td>
             <td>Valor da Conta</td>
             <td>Data de Vencimento</td>

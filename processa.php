@@ -11,14 +11,19 @@
         $p = new conexao("contas", "localhost", "root", "");
     ?>
 <body>
+    <div class="menu">
+        <a href="index.php">HOME</a> |
+        <a href="dados.php">TABELAS DE CONTAS</a> |
+        <a href="cadastro.php">CADASTRAMENTO DE CONTAS</a>
+    </div>
+    <br>
     <?php
+        $codigo = $_POST['codigo'];
         $descricao = $_POST['descricao'];
         $valor = $_POST['valor'];
         $dt_vencimento = $_POST['vencimento'];
-        $p->inserirDados($descricao, $valor, $dt_vencimento);
-        if($res = true){
-            echo "<h2>Cadastramento realizado com Sucesso!</h2>";
-        }
+        $p->inserirDados($codigo, $descricao, $valor, $dt_vencimento);
     ?>
+
 </body>
 </html>

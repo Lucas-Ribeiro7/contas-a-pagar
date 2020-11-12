@@ -15,13 +15,17 @@
     <br>
     <div class="cadastro">
         <form action="processa.php" method="POST">
+            <label>Código para identificação</label>
+            <br>
+            <input type="number" name="codigo" required>
+            <br>
             <label>Descrição da Conta:</label>
             <br>
             <input type="text" name="descricao" required>
             <br>
-            <label>Valor:</label>
+            <label>Valor: (Obs: Não será aceito ',' mas será aceito '.' para colocar a separação dos centavos)</label>
             <br>
-            <input type="number" name="valor" required>
+            <input type="text" name="valor" required>
             <br>
             <label>Data de Vencimento</label>
             <br>
