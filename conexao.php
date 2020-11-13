@@ -8,7 +8,7 @@
         public function inserirDados($codigo, $descricao, $valor, $vencimento){
             $sql = $this->pdo->query("SELECT id FROM pagar WHERE codigo = '$codigo'");
             if($sql->rowCount() > 0){
-                echo "<h2>Conta já cadastrada!</h2>";
+                echo "<h2>Conta já cadastrada com este Código!</h2>";
             }else{
                 $this->pdo->query("INSERT INTO pagar (codigo, descricao, valor, dt_vencimento) VALUES ('$codigo','$descricao', $valor, '$vencimento')");
                 echo "<h2>Cadastramento realizado com Sucesso!</h2>";

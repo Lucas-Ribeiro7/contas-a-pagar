@@ -35,6 +35,8 @@
                         }
                         echo "</td>";
                     }
+                }else{
+                    echo "<h2>Não existe nenhuma conta cadastrada</h2>";
                 }
             ?>
         </table>

@@ -13,6 +13,13 @@
         <a href="cadastro.php">CADASTRAMENTO DE CONTAS</a>
     </div>
     <br>
+    <img src="img/contas.jpg">
+    <div class="texto">
+        <p>
+            Sejam Bem Vindos ao site para cadastro e controle de suas contas!<br>
+            Aqui você poderá cadastrar e deixar no historico, deixamos as contas em ordem de vencimento
+        </p>
+    </div>
       
 </body>
 </html>
