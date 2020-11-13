@@ -17,7 +17,9 @@
         }
         public function buscarDados(){
             $res = array();
-            $cmd = $this->pdo->query('SELECT * ');
+            $cmd = $this->pdo->query('SELECT codigo, descricao, valor, dt_vencimento FROM pagar ORDER BY dt_vencimento;');
+            $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
+            return $res;
         }
         
 
