@@ -13,8 +13,9 @@
 <body>
     <div class="menu">
         <a href="index.php">HOME</a> |
-        <a href="dados.php">TABELAS DE CONTAS</a> |
-        <a href="cadastro.php">CADASTRAMENTO DE CONTAS</a>
+        <a href="dados.php">CONTAS A PAGAR</a> |
+        <a href="cadastro.php">CADASTRAMENTO DE CONTAS</a> |
+        <a href="pagas.php">CONTAS PAGAS</a>
     </div>
     <br>
     <div class="contas">

@@ -13,8 +13,9 @@
 <body>
     <div class="menu">
         <a href="index.php">HOME</a> |
-        <a href="dados.php">TABELAS DE CONTAS</a> |
-        <a href="cadastro.php">CADASTRAMENTO DE CONTAS</a>
+        <a href="dados.php">CONTAS A PAGAR</a> |
+        <a href="cadastro.php">CADASTRAMENTO DE CONTAS</a> |
+        <a href="pagas.php">CONTAS PAGAS</a>
     </div>
     <br>
     <?php
@@ -22,7 +23,13 @@
         $descricao = $_POST['descricao'];
         $valor = $_POST['valor'];
         $dt_vencimento = $_POST['vencimento'];
-        $p->inserirDados($codigo, $descricao, $valor, $dt_vencimento);
+        $situacao = $_POST['situacao'];
+        if($situacao == "aberto"){
+            $situacao = 1;
+        }else if($situacao == "pago"){
+            $situacao = 0;
+        }
+        $p->inserirDados($codigo, $descricao, $valor, $dt_vencimento, $situacao);
     ?>
 
 </body>

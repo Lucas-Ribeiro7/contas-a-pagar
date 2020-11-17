@@ -9,27 +9,23 @@
 <body>
     <div class="menu">
         <a href="index.php">HOME</a> |
-        <a href="dados.php">TABELAS DE CONTAS</a> |
-        <a href="cadastro.php">CADASTRAMENTO DE CONTAS</a>
+        <a href="dados.php">CONTAS A PAGAR</a> |
+        <a href="cadastro.php">CADASTRAMENTO DE CONTAS</a> |
+        <a href="pagas.php">CONTAS PAGAS</a>
     </div>
     <br>
     <div class="cadastro">
         <form action="processa.php" method="POST">
-            <label>Código para identificação</label>
-            <br>
-            <input type="number" name="codigo" required>
-            <br>
-            <label>Descrição da Conta:</label>
-            <br>
-            <input type="text" name="descricao" required>
-            <br>
-            <label>Valor: (Obs: Não será aceito ',' mas será aceito '.' para colocar a separação dos centavos)</label>
-            <br>
-            <input type="text" name="valor" required>
-            <br>
-            <label>Data de Vencimento</label>
-            <br>
-            <input type="date" name="vencimento" required>
+            <p>Código para identificação:<input type="number" name="codigo" required></p>
+            <p>Descrição da Conta:<input type="text" name="descricao" required></p>
+            <p>Valor: <strong>(Obs: Se for valores quebrados. Ex: 14.52 - ".")</strong><input type="text" name="valor" required></p> 
+            <p>Data de Vencimento: <input type="date" name="vencimento" required></p>
+            
+            <p>Situação</p>
+            <input type="radio" name="situacao" value="aberto" required>
+            <label for="aberto">Em Aberto</label>
+            <input type="radio" name="situacao" value="pago">
+            <label for="pago">Pago</label>
             <br>
             <br>
             <input type="submit" value="Salvar">
