@@ -15,7 +15,8 @@
         <a href="index.php">HOME</a> |
         <a href="dados.php">CONTAS A PAGAR</a> |
         <a href="cadastro.php">CADASTRAMENTO DE CONTAS</a> |
-        <a href="pagas.php">CONTAS PAGAS</a>
+        <a href="pagas.php">CONTAS PAGAS</a> |
+        <a href="procedimentos.php">PROCEDIMENTOS</a>
     </div>
     <br>
     <div class="contas">
@@ -27,7 +28,7 @@
                 <td>Data de Vencimento</td>
             </tr>
             <?php
-                $dados = $p->buscarDados();
+                $dados = $p->buscarDadosAbertos();
                 if(count($dados) > 0){
                     for($i = 0; $i < count($dados); $i++){
                         echo "<tr>";
@@ -37,7 +38,7 @@
                         echo "</td>";
                     }
                 }else{
-                    echo "<h2>Não existe nenhuma conta cadastrada</h2>";
+                    echo "<h2>Não existe nenhuma conta em aberto cadastrado</h2>";
                 }
             ?>
         </table>

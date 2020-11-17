@@ -15,9 +15,15 @@
             }
              
         }
-        public function buscarDados(){
+        public function buscarDadosAbertos(){
             $res = array();
             $cmd = $this->pdo->query('SELECT codigo, descricao, valor, dt_vencimento FROM pagar WHERE situacao = true ORDER BY dt_vencimento;');
+            $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
+            return $res;
+        }
+        public function buscarDadosPagos(){
+            $res = array();
+            $cmd = $this->pdo->query('SELECT codigo, descricao, valor, dt_vencimento FROM pagar WHERE situacao = false ORDER BY codigo');
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
             return $res;
         }
