@@ -14,18 +14,18 @@ div.cadastro{
 div.contas{
     padding: 10px;
     margin: auto;
-    background-color: rgb(112, 87, 136);
+    background-color: rgb(169, 160, 177);
     color: black;
 }
 td, tr{
-    background-color: burlywood;
+    background-color: rgb(68, 61, 51);
 }
 div.menu{
     background-color: rgb(140, 140, 155);
     width: 800px;
     padding: 30px;
     margin: auto;
-    color: rgb(192, 41, 36);
+    color: rgb(67, 95, 104);
     text-align: center;
 }
 a{

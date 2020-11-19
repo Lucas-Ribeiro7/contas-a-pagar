@@ -27,6 +27,16 @@
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
             return $res;
         }
+        public function somaAbertos(){
+            $cmd = $this->pdo->query('SELECT sum(valor)  AS tot_valor FROM pagar WHERE situacao = 1');
+            $soma = $cmd->fetch(PDO::FETCH_ASSOC);
+            return $soma['tot_valor'];
+        }
+        public function somaPago(){
+            $cmd = $this->pdo->query('SELECT sum(valor) AS tot_valor FROM pagar WHERE situacao = 0');
+            $soma = $cmd->fetch(PDO::FETCH_ASSOC);
+            return $soma['tot_valor'];
+        }
         
 
     }
