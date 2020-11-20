@@ -25,5 +25,12 @@
     ?>
     <p>Soma de todos as contas em Aberto: <strong><?php echo $soma_abertos; ?></strong></p>
     <p>Soma de todos as contas pagas: <strong><?php echo $soma_pago; ?></strong></p>
+    <form action="excluir.php" method="POST">
+        <p>Excluir a conta com o Código: <input type="number" name="excluir"> <input type="submit" value="Excluir"></p>
+    </form>
+    <form action="atualizar.php" method="POST">
+        <p>Editar a conta com o Código: <input type="number" name="editar"> </p>
+    </form>
+    
 </body>
 </html>
