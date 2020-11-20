@@ -11,12 +11,18 @@
         $p = new conexao("contas", "localhost", "root", "");
     ?>
 <body>
+    <div class="menu">
+        <a href="index.php">HOME</a> |
+        <a href="dados.php">CONTAS A PAGAR</a> |
+        <a href="cadastro.php">CADASTRAMENTO DE CONTAS</a> |
+        <a href="pagas.php">CONTAS PAGAS</a> |
+        <a href="procedimentos.php">PROCEDIMENTOS</a>
+    </div>
+    <br>
     <?php
         $codigo_excluir = $_POST['excluir'];
         $p->excluirConta($codigo_excluir);   
     ?>
-    <button>
-    <a href="procedimentos.php">Voltar</a>
-    </button>
+    
 </body>
 </html>
