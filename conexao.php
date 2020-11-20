@@ -38,16 +38,23 @@
             return $soma['tot_valor'];
         }
         function excluirConta($codigo){
-            $cmd = $this->pdo->prepare('DELETE FROM pagar WHERE codigo = :c');
-            $cmd->bindValue(":c", $codigo);
-            $cmd->execute();
-            $sql = $this->pdo->query("SELECT * FROM pagar WHERE codigo = '$codigo'");
-
-            if($sql->rowCount()==0){
-                echo "<h2>Conta cadastrada com o Codigo: <strong>$codigo</strong> foi excluído com SUCESSO!</h2>";
+            $verificar = $this->pdo->query("SELECT * FROM pagar WHERE codigo = '$codigo'");
+            if($verificar->rowCount()==0){
+                echo "<h2>[ERRO] Essa conta não existe</h2>";
             }else{
-                echo "<h2>[ERRO] Erro na conexão com o Banco</h2>";
+               $cmd = $this->pdo->prepare('DELETE FROM pagar WHERE codigo = :c');
+                $cmd->bindValue(":c", $codigo);
+                $cmd->execute();
+                $sql = $this->pdo->query("SELECT * FROM pagar WHERE codigo = '$codigo'");
+
+                if($sql->rowCount()==0){
+                    echo "<h2>Conta cadastrada com o Codigo: <strong>$codigo</strong> foi excluído com SUCESSO!</h2>";
+                }else{
+                    echo "<h2>[ERRO] Erro na conexão com o Banco</h2>";
+                } 
             }
+
+            
         }
         
 
