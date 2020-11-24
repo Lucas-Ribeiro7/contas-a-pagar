@@ -27,10 +27,10 @@
         <p>Soma de todos as contas em Aberto: <strong><?php echo $soma_abertos; if($soma_abertos == 0){echo "0";} ?> Reais</strong></p>
         <p>Soma de todos as contas pagas: <strong><?php echo $soma_pago; if($soma_pago == 0){echo "0";} ?> Reais</strong></p>
         <form action="excluir.php" method="POST">
-            <p>Excluir a conta com o Código: <input type="number" name="excluir"> <input type="submit" value="Excluir"></p>
+            <p>Excluir a conta com o Código: <input type="number" name="excluir" required> <input type="submit" value="Excluir"></p>
         </form>
         <form action="editar.php" method="POST">
-            <p>Editar a conta com o Código: <input type="number" name="editar"> <input type="submit" value="Editar"></p>
+            <p>Editar a conta com o Código: <input type="number" name="editar" required> <input type="submit" value="Editar"></p>
         </form>
     </div>
     

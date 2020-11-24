@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="estilo.css">
     <title>Contas a Pagar</title>
 </head>
+    <?php
+        require_once 'conexao.php';
+        $p = new conexao("contas", "localhost", "root", "");
+    ?>
 <body>
     <div class="menu">
         <a href="index.php">HOME</a> |
@@ -26,7 +30,7 @@
             }else if($situacao == "pago"){
                 $situacao = 0;
             }
-            $p->inserirDados($codigo, $descricao, $valor, $dt_vencimento, $situacao);
+            $p->editarConta($codigo, $descricao, $valor, $dt_vencimento, $situacao);
         ?>
 </body>
 </html>
