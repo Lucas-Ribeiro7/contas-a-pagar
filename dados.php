@@ -33,7 +33,7 @@
                     for($i = 0; $i < count($dados); $i++){
                         echo "<tr>";
                         foreach($dados[$i] as $key => $value){
-                                echo "<td>$value</td>";
+                                echo "<td>$value</td>";        
                         }
                         echo "</td>";
                     }

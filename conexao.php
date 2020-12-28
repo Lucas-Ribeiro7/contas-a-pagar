@@ -11,7 +11,12 @@
                 echo "<h2>Conta já cadastrada com este Código!</h2>";
             }else{
                 $this->pdo->query("INSERT INTO pagar (codigo, descricao, valor, dt_vencimento, situacao) VALUES ('$codigo','$descricao', $valor, '$vencimento', '$situacao')");
-                echo "<h2>Cadastramento realizado com Sucesso!</h2>";
+                $teste = $this->pdo->query("SELECT codigo FROM pagar WHERE codigo = '$codigo'");
+                if($teste->rowCount() == 0){
+                    echo "<h2>Cadastramento não realizado, está inválido!</h2>";
+                }else{
+                    echo "<h2>Cadastramento realizado com Sucesso!</h2>";
+                }
             }
              
         }
@@ -19,6 +24,7 @@
             $res = array();
             $cmd = $this->pdo->query('SELECT codigo, descricao, valor, dt_vencimento FROM pagar WHERE situacao = true ORDER BY dt_vencimento;');
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
+            $res['dt_vencimento'] = date('d/m/y');
             return $res;
         }
         public function buscarDadosPagos(){
