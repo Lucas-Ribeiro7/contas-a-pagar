@@ -24,7 +24,6 @@
             $res = array();
             $cmd = $this->pdo->query('SELECT codigo, descricao, valor, dt_vencimento FROM pagar WHERE situacao = true ORDER BY dt_vencimento;');
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
-            $res['dt_vencimento'] = date('d/m/y');
             return $res;
         }
         public function buscarDadosPagos(){

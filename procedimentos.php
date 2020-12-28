@@ -20,20 +20,38 @@
     </div>
     <br>
     <div class="contas">
-        <?php 
-            $soma_abertos = $p->somaAbertos();
-            $soma_pago = $p->somaPago(); 
-        ?>
-        <p>Soma de todos as contas em Aberto: <strong><?php echo number_format($soma_abertos, 2, ",", "."); ?> Reais</strong></p>
-        <p>Soma de todos as contas pagas: <strong><?php echo number_format($soma_pago, 2, ",", "."); ?> Reais</strong></p>
-        <form action="excluir.php" method="POST">
-            <p>Excluir a conta com o Código: <input type="number" name="excluir" required> <input type="submit" value="Excluir"></p>
-        </form>
-        <form action="editar.php" method="POST">
-            <p>Editar a conta com o Código: <input type="number" name="editar" required> <input type="submit" value="Editar"></p>
-        </form>
+        <div>
+            <?php 
+                $soma_abertos = $p->somaAbertos();
+                $soma_pago = $p->somaPago(); 
+            ?>
+        </div>
+        <div>
+            <p>Soma de todos as contas em Aberto: <strong><?php echo number_format($soma_abertos, 2, ",", "."); ?> Reais</strong></p>
+        </div>
+        <div>
+            <p>Soma de todos as contas pagas: <strong><?php echo number_format($soma_pago, 2, ",", "."); ?> Reais</strong></p>
+        </div>
+        <div>
+            <form action="" method="GET">
+                <p>Excluir a conta com o Código: <input type="number" name="excluir" required>  <input type="submit" value="Excluir"></p>
+            </form>
+                <?php
+                    if(isset($_GET['excluir'])){
+                        $codigo = $_GET['excluir'];
+                        $p->excluirConta($codigo);
+                    }
+                ?>
+        </div>
+        <div>
+            <form action="editar.php" method="POST">
+                <p>Editar a conta com o Código: <input type="number" name="editar" required> <input type="submit" value="Editar"></p>
+            </form>
+        </div>
+        <div>
+            
+        </div>
     </div>
-    
     
 </body>
 </html>

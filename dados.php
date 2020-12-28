@@ -29,13 +29,14 @@
             </tr>
             <?php
                 $dados = $p->buscarDadosAbertos();
+                $dados['0']['dt_vencimento'] = date("d/m/y");
                 if(count($dados) > 0){
                     for($i = 0; $i < count($dados); $i++){
                         echo "<tr>";
                         foreach($dados[$i] as $key => $value){
-                                echo "<td>$value</td>";        
+                                echo "<td>$value</td>";
                         }
-                        echo "</td>";
+                        echo "</tr>";
                     }
                 }else{
                     echo "<h2>Não existe nenhuma conta em aberto cadastrado</h2>";
