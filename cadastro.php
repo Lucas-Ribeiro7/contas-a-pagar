@@ -19,7 +19,7 @@
         <form action="processa.php" method="POST">
             <p>Código para identificação:<input type="number" name="codigo" required></p>
             <p>Descrição da Conta:<input type="text" name="descricao" required></p>
-            <p>Valor: <strong>(Obs: Se for valores quebrados. Ex: 14.52 - ".")</strong><input type="text" name="valor" required></p> 
+            <p>Valor: <input type="text" name="valor" size="8px" required></p> 
             <p>Data de Vencimento: <input type="date" name="vencimento" required></p>
             
             <p>Situação</p>

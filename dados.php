@@ -29,7 +29,6 @@
             </tr>
             <?php
                 $dados = $p->buscarDadosAbertos();
-                $dados['0']['dt_vencimento'] = date("d/m/y");
                 if(count($dados) > 0){
                     for($i = 0; $i < count($dados); $i++){
                         echo "<tr>";
