@@ -49,7 +49,27 @@
             </form>
         </div>
         <div>
-            
+            <div>
+                <form action="" method="GET">
+                    <input type="submit" value="Apagar todos das contas A PAGAR" name="delete-apagar">
+                </form>
+                <?php
+                    if(isset($_GET['delete-apagar'])){
+                        $p->deleteApagar();
+                    }
+                ?>
+            </div>
+            <br>
+            <div>
+                <form action="" method="GET">
+                    <input type="submit" value="Apagar todos das contas PAGAS" name="delete-pagas">
+                </form>
+                <?php
+                    if(isset($_GET['delete-pagas'])){
+                        $p->deletePagas();
+                    }
+                ?>
+            </div>
         </div>
     </div>
     

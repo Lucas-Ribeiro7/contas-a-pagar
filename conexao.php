@@ -76,5 +76,13 @@
             $cmd = $this->pdo->query("UPDATE pagar SET codigo = '$codigo', descricao = '$descricao', valor = '$valor', dt_vencimento = '$vencimento', situacao = '$situacao' WHERE codigo = '$codigo'");
             echo "<h2>Edição realizada com sucesso!</h2>";
         }
+        public function deleteApagar(){
+            $cmd = $this->pdo->query('DELETE FROM pagar WHERE situacao = 1');
+            echo "<h2>[ATENÇÃO] Todas as contas que estão A PAGAR foram excluídas!!</h2>";
+        }
+        public function deletePagas(){
+            $cmd = $this->pdo->query('DELETE FROM pagar WHERE situacao = 0');
+            echo "<h2>[ATENÇÃO] Todas as contas que estão PAGAS foram excluídas!!</h2>";
+        }
 
     }
