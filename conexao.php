@@ -8,15 +8,15 @@
         public function inserirDados($codigo, $descricao, $valor, $vencimento, $situacao){
             $sql = $this->pdo->query("SELECT id FROM pagar WHERE codigo = '$codigo'");
             if($sql->rowCount() > 0){
-                echo "<h2>Conta já cadastrada com este Código!</h2>";
+                echo "<h3>Conta já cadastrada com este Código!</h3>";
             }else{
                 $valor = str_replace(array(".",","),array(",","."),$valor);
                 $this->pdo->query("INSERT INTO pagar (codigo, descricao, valor, dt_vencimento, situacao) VALUES ('$codigo','$descricao', $valor, '$vencimento', '$situacao')");
                 $teste = $this->pdo->query("SELECT codigo FROM pagar WHERE codigo = '$codigo'");
                 if($teste->rowCount() == 0){
-                    echo "<h2>Cadastramento não realizado, está inválido!</h2>";
+                    echo "<h3>Cadastramento não realizado, está inválido!</h3>";
                 }else{
-                    echo "<h2>Cadastramento realizado com Sucesso!</h2>";
+                    echo "<h3>Cadastramento realizado com Sucesso!</h3>";
                 }
             }
              
@@ -46,7 +46,7 @@
         function excluirConta($codigo){
             $verificar = $this->pdo->query("SELECT * FROM pagar WHERE codigo = '$codigo'");
             if($verificar->rowCount()==0){
-                echo "<h2>[ERRO] Essa conta não existe!!</h2>";
+                echo "<h3>[ERRO] Essa conta não existe!!</h3>";
             }else{
                $cmd = $this->pdo->prepare('DELETE FROM pagar WHERE codigo = :c');
                 $cmd->bindValue(":c", $codigo);
@@ -54,16 +54,16 @@
                 $sql = $this->pdo->query("SELECT * FROM pagar WHERE codigo = '$codigo'");
 
                 if($sql->rowCount()==0){
-                    echo "<h2>Conta cadastrada com o Codigo: <strong>$codigo</strong>, foi excluído com SUCESSO!</h2>";
+                    echo "<h3>Conta cadastrada com o Codigo: <strong>$codigo</strong>, foi excluído com SUCESSO!</h3>";
                 }else{
-                    echo "<h2>[ERRO] Erro na conexão com o Banco</h2>";
+                    echo "<h3>[ERRO] Erro na conexão com o Banco</h3>";
                 } 
             }      
         }
         public function buscarDados($codigo){
             $verificar = $this->pdo->query("SELECT * FROM pagar WHERE codigo = '$codigo'");
             if($verificar->rowCount()==0){
-                echo "<h2>[ERRO] Essa conta não existe!!</h2>";
+                echo "<h3>[ERRO] Essa conta não existe!!</h3>";
             }else{
                 $cmd = $this->pdo->query("SELECT * FROM pagar WHERE codigo = '$codigo'");
                 $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
@@ -74,15 +74,27 @@
         }
         public function editarConta($codigo, $descricao, $valor, $vencimento, $situacao){
             $cmd = $this->pdo->query("UPDATE pagar SET codigo = '$codigo', descricao = '$descricao', valor = '$valor', dt_vencimento = '$vencimento', situacao = '$situacao' WHERE codigo = '$codigo'");
-            echo "<h2>Edição realizada com sucesso!</h2>";
+            echo "<h3>Edição realizada com sucesso!</h3>";
         }
         public function deleteApagar(){
-            $cmd = $this->pdo->query('DELETE FROM pagar WHERE situacao = 1');
-            echo "<h2>[ATENÇÃO] Todas as contas que estão A PAGAR foram excluídas!!</h2>";
+            $verificar = $this->pdo->query('SELECT * FROM pagar WHERE situacao = 1');
+            if($verificar->rowCount() != 0){
+                $cmd = $this->pdo->query('DELETE FROM pagar WHERE situacao = 1');
+                echo "<h3>[ATENÇÃO] Todas as contas que estão A PAGAR foram excluídas!!</h3>";
+            }else{
+                echo "<h3>[ATENÇÃO] Não existe nenhuma conta A PAGAR!!</h3>";
+            }
+            
         }
         public function deletePagas(){
-            $cmd = $this->pdo->query('DELETE FROM pagar WHERE situacao = 0');
-            echo "<h2>[ATENÇÃO] Todas as contas que estão PAGAS foram excluídas!!</h2>";
+            $verificar = $this->pdo->query('SELECT * FROM pagar WHERE situacao = 0');
+            if($verificar->rowCount() != 0){
+                $cmd = $this->pdo->query('DELETE FROM pagar WHERE situacao = 0');
+                echo "<h3>[ATENÇÃO] Todas as contas que estão PAGAS foram excluídas!!</h3>";
+            }else{
+                echo "<h3>[ATENÇÃO] Não existe nenhuma conta PAGAS!!</h3>"; 
+            }
+            
         }
 
     }
