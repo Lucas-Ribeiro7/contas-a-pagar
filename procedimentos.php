@@ -49,35 +49,40 @@
             </form>
         </div>
         <div>
-            <div>
+            <div class="delete-apagar">
                 <form action="" method="GET">
                     <input type="submit" value="Apagar todos das contas A PAGAR" name="delete-apagar">
                 </form>
                 <?php
                     if(isset($_GET['delete-apagar'])){
+                        echo "<form action='' method='GET'>";
+                        echo "<p>Tem certeza que deseja apagar tudo?</p>";
+                        echo "<input type='radio' name='sim-apagar' value= 'sim-apagar'>";
+                        echo "<label for='sim-apagar'>Sim, tenho certeza que eu quero apagar TUDO!</label><br>";
+                        echo "<br><input type='submit' name='resposta' value= 'Responder'>";
+                        echo "</form>";  
+                    }
+                    if(isset($_GET['sim-apagar'])){
                         $p->deleteApagar();
                     }
                 ?>
             </div>
             <br>
-            <div>
+            <div class="delete-pagas">
                 <form action="" method="GET">
-                    <input type="submit" value="Apagar todos das contas PAGAS" name="delete-pagas">
-                    <script>
-                        window.alert("Você tem certeza que deseja apagar?")
-                    </script>
+                    <input type="submit" value="Apagar todos das contas PAGAS" name="delete-pagas">   
                 </form>
                 <?php
                     if(isset($_GET['delete-pagas'])){
                         echo "<form action='' method='GET'>";
                         echo "<p>Tem certeza que deseja apagar tudo?</p>";
-                        echo "<input type='radio' name='sim' value= 'sim'>";
-                        echo "<label for='sim'>Sim, tenho certeza que eu quero apagar TUDO!</label>";
-                        echo "<input type='submit' name='resposta' value= 'Responder'>";
-                        echo "</form>";
-                        if(isset($_GET['delete-pagas']) && isset($_GET['sim'])){
-                            $p->deletePagas();
-                        }  
+                        echo "<input type='radio' name='sim-pagas' value= 'sim-pagas'>";
+                        echo "<label for='sim-pagas'>Sim, tenho certeza que eu quero apagar TUDO!</label><br>";
+                        echo "<br><input type='submit' name='resposta' value= 'Responder'>";
+                        echo "</form>";  
+                    }
+                    if(isset($_GET['sim-pagas'])){
+                        $p->deletePagas();
                     }
                 ?>
             </div>
