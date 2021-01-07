@@ -24,15 +24,19 @@
             <?php 
                 $soma_abertos = $p->somaAbertos();
                 $soma_pago = $p->somaPago(); 
+                $soma_total = $p->somaTotal();
             ?>
         </div>
-        <div>
+        <div class="soma-abertos">
             <p>Soma de todos as contas em Aberto: <strong><?php echo number_format($soma_abertos, 2, ",", "."); ?> Reais</strong></p>
         </div>
-        <div>
+        <div class="soma-pagas">
             <p>Soma de todos as contas pagas: <strong><?php echo number_format($soma_pago, 2, ",", "."); ?> Reais</strong></p>
         </div>
-        <div>
+        <div class="soma-total">
+        <p>Soma de todas as contas: <strong><?php echo number_format($soma_total, 2, ",", "."); ?> Reais</strong></p>
+        </div>
+        <div class="excluir">
             <form action="" method="GET">
                 <p>Excluir a conta com o Código: <input type="number" name="excluir" required>  <input type="submit" value="Excluir"></p>
             </form>
@@ -43,12 +47,12 @@
                     }
                 ?>
         </div>
-        <div>
+        <div class="editar">
             <form action="editar.php" method="POST">
                 <p>Editar a conta com o Código: <input type="number" name="editar" required> <input type="submit" value="Editar"></p>
             </form>
         </div>
-        <div>
+        <div class="delete">
             <div class="delete-apagar">
                 <form action="" method="GET">
                     <input type="submit" value="Apagar todos das contas A PAGAR" name="delete-apagar">

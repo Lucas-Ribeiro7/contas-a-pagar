@@ -93,8 +93,16 @@
                 echo "<h3>[ATENÇÃO] Todas as contas que estão PAGAS foram excluídas!!</h3>";
             }else{
                 echo "<h3>[ATENÇÃO] Não existe nenhuma conta PAGAS!!</h3>"; 
-            }
-            
+            }   
         }
-
+        public function somaTotal(){
+            $verificar = $this->pdo->query('SELECT * FROM pagar');
+            if($verificar->rowCount() == 0){
+                return 0;
+            }else{
+                $cmd = $this->pdo->query('SELECT SUM(valor) as tot_valor FROM `pagar`');
+                $soma = $cmd->fetchAll(PDO::FETCH_ASSOC);
+                return $soma[0]['tot_valor'];
+            }
+        }
     }
