@@ -22,10 +22,10 @@
     <div class="contas">
         <table>
             <tr id="titulo">
-                <td>Código</td>
-                <td>Descrição</td>
-                <td>Valor da Conta</td>
-                <td>Data de Vencimento</td>
+                <td> <b>CÓDIGO</b> </td>
+                <td> <b>DESCRIÇÃO</b> </td>
+                <td> <b>VALOR DA CONTA</b> </td>
+                <td> <b>DATA DE VENCIMENTO</b> </td>
             </tr>
             <?php
                 $dados = $p->buscarDadosPagos();

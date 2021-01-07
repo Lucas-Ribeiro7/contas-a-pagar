@@ -17,9 +17,12 @@ div.contas{
     background-color: rgb(169, 160, 177);
     color: black;
     text-align: center;
+    width: 840px;
 }
 td, tr{
     background-color: rgb(131, 120, 105);
+    padding: 20px;
+    width: 400px;
 }
 div.menu{
     background-color: rgb(140, 140, 155);
