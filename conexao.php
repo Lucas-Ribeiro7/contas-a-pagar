@@ -89,8 +89,8 @@
             }      
         }
         public function editarConta($codigo, $descricao, $valor, $vencimento, $situacao){
-            $cmd = $this->pdo->query("UPDATE pagar SET codigo = '$codigo', descricao = '$descricao', valor = '$valor', dt_vencimento = '$vencimento', situacao = '$situacao' WHERE codigo = '$codigo'");
-            echo "<h3>Edição realizada com sucesso!</h3>";
+                $cmd = $this->pdo->query("UPDATE pagar SET codigo = '$codigo', descricao = '$descricao', valor = '$valor', dt_vencimento = '$vencimento', situacao = '$situacao' WHERE codigo = '$codigo'");
+                echo "<h3>Edição realizada com sucesso!</h3>";            
         }
 
         //-------------------------------Delete------------------------

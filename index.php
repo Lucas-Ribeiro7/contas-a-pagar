@@ -15,13 +15,15 @@
         <a href="procedimentos.php">PROCEDIMENTOS</a>
     </div>
     <br>
-    <img src="img/contas.jpg">
-    <div class="texto">
-        <p>
-            Sejam Bem Vindos ao site para cadastro e controle de suas contas!<br>
-            Aqui você poderá cadastrar e deixar no historico, deixamos as contas em ordem de vencimento
-        </p>
+    <div class="home">
+        <img src="img/contas.jpg">
+        <div class="texto">
+            <p>
+                Sejam Bem Vindos ao site para cadastro e controle de suas contas!<br>
+                Aqui você poderá cadastrar e deixar no historico, deixamos as contas em ordem de vencimento
+            </p>
+        </div>
     </div>
-      
+     
 </body>
 </html>

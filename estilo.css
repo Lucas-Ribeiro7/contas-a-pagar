@@ -1,8 +1,9 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    margin: auto;
+    background: url(img/fundo.jpg);
+    background-size: 100%;
     width: 800px;
-    padding: 50px;
+    margin: auto;
 }
 div.cadastro{
     padding: 20px;
@@ -16,7 +17,6 @@ div.contas{
     margin: auto;
     background-color: rgb(169, 160, 177);
     color: black;
-    text-align: center;
     width: 840px;
 }
 td, tr{
@@ -34,4 +34,11 @@ div.menu{
 }
 a{
     text-decoration: none;
+}
+h3{
+    width: 840px;
+    margin: auto;
+    border-radius: 3px;
+    background: rgb(123, 129, 129);
+    padding: 10px;
 }

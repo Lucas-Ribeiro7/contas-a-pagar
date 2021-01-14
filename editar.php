@@ -22,19 +22,23 @@
     <?php
         $codigo_enviado = $_POST['editar'];
         $dados = $p->buscarDados($codigo_enviado);
-        if(count($dados)>0){
-            for($i = 0; $i < count($dados);$i++){
-                foreach($dados[$i] as $key => $value){
-                    
+        if(count($dados) == 0){
+            echo "<h3>[ERRO] Essa conta não existe!!</h3>";
+        }else{
+            if(count($dados)>0){
+                for($i = 0; $i < count($dados);$i++){
+                    foreach($dados[$i] as $key => $value){
+                        
+                    }
                 }
             }
+            $codigo = $dados['0']['codigo'];
+            $descricao = $dados['0']["descricao"];
+            $valor = $dados['0']["valor"];
+            $vencimento = $dados['0']["dt_vencimento"];        
+            $situacao = $dados['0']['situacao'];
         }
-        $codigo = $dados['0']['codigo'];
-        $descricao = $dados['0']["descricao"];
-        $valor = $dados['0']["valor"];
-        $vencimento = $dados['0']["dt_vencimento"];        
-        $situacao = $dados['0']['situacao'];
-        
+             
     ?>
     <div class="cadastro">
         <form action="processa_editar.php" method="POST">
