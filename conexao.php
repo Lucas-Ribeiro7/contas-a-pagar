@@ -89,8 +89,14 @@
             }      
         }
         public function editarConta($codigo, $descricao, $valor, $vencimento, $situacao){
-                $cmd = $this->pdo->query("UPDATE pagar SET codigo = '$codigo', descricao = '$descricao', valor = '$valor', dt_vencimento = '$vencimento', situacao = '$situacao' WHERE codigo = '$codigo'");
-                echo "<h3>Edição realizada com sucesso!</h3>";            
+                $verificar = $this->pdo->query("SELECT * FROM pagar WHERE codigo = '$codigo'");
+                if($verificar->rowCount()==0){
+                    echo "<h3>[ERRO] Essa conta não existe!!</h3>";
+                }else{
+                    $cmd = $this->pdo->query("UPDATE pagar SET codigo = '$codigo', descricao = '$descricao', valor = '$valor', dt_vencimento = '$vencimento', situacao = '$situacao' WHERE codigo = '$codigo'");
+                    echo "<h3>Edição realizada com sucesso!</h3>";
+                }
+                            
         }
 
         //-------------------------------Delete------------------------

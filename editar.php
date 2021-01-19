@@ -23,7 +23,9 @@
         $codigo_enviado = $_POST['editar'];
         $dados = $p->buscarDados($codigo_enviado);
         if(count($dados) == 0){
-            echo "<h3>[ERRO] Essa conta não existe!!</h3>";
+            //Usando JavaScript
+            echo "<script>alert('Está conta não existe!');";
+            echo "window.location='/contas%20a%20Pagar/procedimentos.php'</script>"; //Volta para a pagina que você colocar entre ' '
         }else{
             if(count($dados)>0){
                 for($i = 0; $i < count($dados);$i++){
