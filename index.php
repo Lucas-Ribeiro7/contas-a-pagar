@@ -16,14 +16,28 @@
     </div>
     <br>
     <div class="home">
-        <img src="img/contas.jpg">
-        <div class="texto">
-            <p>
-                Sejam Bem Vindos ao site para cadastro e controle de suas contas!<br>
-                Aqui você poderá cadastrar e deixar no historico, deixamos as contas em ordem de vencimento
-            </p>
-        </div>
-    </div>
-     
+        <div class="base-corpo">
+            <div class="base-colunas">
+                <div>
+                    <a href="cadastro.php" class="col">
+                        <i class="icone ico1"></i>
+                        <p>Nova Conta</p>
+                    </a>
+                    <a href="dados.php" class="col">
+                        <i class="icone ico2"></i>
+                        <p>Contas a Pagar</p>
+                    </a>
+                    <a href="pagas.php" class="col">
+                        <i class="icone ico3"></i>
+                        <p>Contas Pagas</p>
+                    </a>
+                    <a href="" class="col">
+                        <i class="icone ico4"></i>
+                        <p>Todas as contas</p>
+                    </a>
+                </div>
+            </div>
+        </div>   
+    </div> 
 </body>
 </html>
