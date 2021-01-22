@@ -128,5 +128,11 @@
                 echo "<h3>[ATENÇÃO] TODAS AS CONTAS FORAM EXCLUÍDAS!!</h3>";
             }  
         }
+
+        /*---------------------Ultimo Código---------------------*/
+        public function ultimoCodigo(){
+            $sql = $this->pdo->query("SELECT MAX(codigo) FROM `pagar`");
+            return $sql->fetch(\PDO::FETCH_ASSOC);
+        }
         
     }

@@ -72,8 +72,8 @@ div.menu{
 a{
     text-decoration: none;
 }
-h3{
-    width: 840px;
+div.contas h3{
+    width: 100%;
     margin: auto;
     border-radius: 3px;
     background: rgb(123, 129, 129);

@@ -3,6 +3,10 @@
     <div class="cadastro">
         <form action="processa.php" method="POST">
             <p>Código para identificação:<input type="number" name="codigo" required></p>
+            <?php 
+                $codigo = $p->ultimoCodigo();
+                echo "<b>Ultimo Código Cadastrado: " . $codigo["MAX(codigo)"] . "</b>";
+            ?>
             <p>Descrição da Conta:<input type="text" name="descricao" required></p>
             <p>Valor: <input type="text" name="valor" size="8px" required></p> 
             <p>Data de Vencimento: <input type="date" name="vencimento" required></p>
