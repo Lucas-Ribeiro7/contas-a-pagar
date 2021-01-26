@@ -5,7 +5,12 @@
             <p>Código para identificação:<input type="number" name="codigo" required></p>
             <?php 
                 $codigo = $p->ultimoCodigo();
-                echo "<b>Ultimo Código Cadastrado: " . $codigo["MAX(codigo)"] . "</b>";
+                if($codigo["MAX(codigo)"] == 0){
+                    echo "<b>Não foi cadastrado nenhuma conta!</b>";
+                }else{
+                    echo "<b>Ultimo Código Cadastrado: " . $codigo["MAX(codigo)"] . "</b>";
+                }
+                
             ?>
             <p>Descrição da Conta:<input type="text" name="descricao" required></p>
             <p>Valor: <input type="text" name="valor" size="8px" required></p> 
