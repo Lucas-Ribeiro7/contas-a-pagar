@@ -1,2 +1,3 @@
-# contas-a-pagar
-Sistema de Cadastros de contas, conectando-o com o Banco de Dados (MySQL)
+# Controle Financeiro
+
+Sofware com o objetivo de lhe ajudar no seu controle financeiro

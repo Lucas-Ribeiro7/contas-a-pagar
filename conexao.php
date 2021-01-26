@@ -43,7 +43,7 @@
         }
         public function buscarDadosPagos(){
             $res = array();
-            $cmd = $this->pdo->query("SELECT codigo, descricao, format(valor, 2, 'de_DE'), date_format(dt_vencimento, '%d/%m/%Y') FROM pagar WHERE situacao = false ORDER BY date_format(dt_vencimento, '%d/%m/%Y')");
+            $cmd = $this->pdo->query("SELECT codigo, descricao, format(valor, 2, 'de_DE'), date_format(dt_vencimento, '%d/%m/%Y') FROM pagar WHERE situacao = false ORDER BY date_format(dt_vencimento, '%d/%m/%')");
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
             return $res;
         }
