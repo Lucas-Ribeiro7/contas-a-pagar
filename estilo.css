@@ -15,22 +15,6 @@ div.base-corpo{
     background:rgb(169, 160, 177);
     box-shadow: 0px 0px 7px 0px black;
 }
-div.cadastro{
-    padding: 20px;
-    width: 600px;
-    margin: auto;
-    background-color: rgb(169, 160, 177);
-    color: black;
-    border-radius: 3px;
-    box-shadow: 0px 0px 7px 0px black;
-}
-div.contas{
-    padding: 10px;
-    margin: auto;
-    background-color: rgb(169, 160, 177);
-    color: black;
-    width: 840px;
-}
 td, tr{
     background-color: rgb(131, 120, 105);
     padding: 20px;
@@ -48,10 +32,12 @@ a{
     text-decoration: none;
     color: black;
 }
-h3{
+div.home div.base-corpo h3{
     width: 100%;
+    text-align: left;
     margin: auto;
     border-radius: 3px;
     background: rgb(123, 129, 129);
     padding: 10px;
+    margin-top: 10px;
 }

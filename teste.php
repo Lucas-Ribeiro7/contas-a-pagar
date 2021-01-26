@@ -1,6 +1,16 @@
-<?php
+    <?php
+        include "cabecalho.php";
+    ?>
 
-    $numero = "98,32";
-    $result = str_replace(array(".",","),array(",","."),$numero);
-    echo $result;
-    echo "<script>alert('Está conta não existe!');</script>";
+    <div class="home">
+        <div class="base-corpo">
+            <?php
+                echo "<h2>Teste!</h2>";
+
+                $dados = $p->buscarDadosAbertos();
+                echo "<pre>";
+                    var_dump($dados["0"]["dt_vencimento"]);
+                echo "</pre>";
+            ?>
+        </div>
+    </div>

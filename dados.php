@@ -1,28 +1,30 @@
     <?php include "cabecalho.php"; ?>
 
-    <div class="contas">
-        <table>
-            <tr id="titulo">
-                <td> <b>CÓDIGO</b> </td>
-                <td> <b>DESCRIÇÃO</b> </td>
-                <td> <b>VALOR DA CONTA</b> </td>
-                <td> <b>DATA DE VENCIMENTO</b> </td>
-            </tr>
-            <?php
-                $dados = $p->buscarDadosAbertos();
-                if(count($dados) > 0){
-                    for($i = 0; $i < count($dados); $i++){
-                        echo "<tr>";
-                        foreach($dados[$i] as $key => $value){
-                                echo "<td>$value</td>";
+    <div class="home">
+        <div class="base-corpo">
+            <table>
+                <tr id="titulo">
+                    <td> <b>CÓDIGO</b> </td>
+                    <td> <b>DESCRIÇÃO</b> </td>
+                    <td> <b>VALOR DA CONTA</b> </td>
+                    <td> <b>DATA DE VENCIMENTO</b> </td>
+                </tr>
+                <?php
+                    $dados = $p->buscarDadosAbertos();
+                    if(count($dados) > 0){
+                        for($i = 0; $i < count($dados); $i++){
+                            echo "<tr>";
+                            foreach($dados[$i] as $key => $value){
+                                    echo "<td>$value</td>";
+                            }
+                            echo "</tr>";
                         }
-                        echo "</tr>";
+                    }else{
+                        echo "<h2>Não existe nenhuma conta em aberto cadastrado</h2>";
                     }
-                }else{
-                    echo "<h2>Não existe nenhuma conta em aberto cadastrado</h2>";
-                }
-            ?>
-        </table>
+                ?>
+            </table>
+        </div>
     </div>
 </body>
 </html>
