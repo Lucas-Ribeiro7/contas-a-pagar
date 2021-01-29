@@ -47,6 +47,10 @@
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
             return $res;
         }
+        public function buscarQtd(){
+            $cmd = $this->pdo->query("SELECT COUNT(id) FROM pagar");
+            return $cmd->fetch(PDO::FETCH_ASSOC);
+        }
 
         //--------------------------------Soma----------------------------
         public function somaAbertos(){
