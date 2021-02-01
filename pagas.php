@@ -2,6 +2,13 @@
     
     <div class="home">
         <div class="base-corpo">
+            <div class="pesquisa">
+                <form action="" method="">
+                    <input type="text" name="pesquisa" placeholder="Digite uma descrição"> 
+                    <input type="submit" value="Buscar">
+                </form>
+            </div>
+            <br>
             <table>
                 <tr id="titulo">
                     <td> <b>CÓDIGO</b> </td>
