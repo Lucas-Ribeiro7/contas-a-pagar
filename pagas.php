@@ -8,8 +8,7 @@
                     <label for="codigo">Codigo</label>
                     <input type="radio" name="escolha" value="descricao">
                     <label for="descricao">Descrição</label>
-                    <input type="radio" name="escolha" value="valor">
-                    <label for="valor">Valor</label>
+                    
 
                     <input type="text" name="pesquisa">
                     

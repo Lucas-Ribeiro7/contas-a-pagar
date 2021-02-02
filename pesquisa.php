@@ -5,15 +5,13 @@
                 <?php
                     $escolha = $_POST['escolha'];
                     $pesquisa = $_POST['pesquisa'];
+                    
                     switch($escolha){
                         case 'codigo' : 
                             $cliente = $p->pesquisarCodigo($pesquisa);            
                             break;
                         case 'descricao' :
                             $cliente = $p->pesquisarDescricao($pesquisa);
-                            break;
-                        case 'valor' :
-                            $cliente = $p->pesquisarValor($pesquisa);
                             break;
                     }
                 ?>
@@ -27,6 +25,7 @@
                     <td><b>SITUAÇÃO</b></td>
                 </tr>
                     <?php
+                    
                     if($cliente == 0){
                         echo "<h2>Não encontramos nenhuma conta</h2>";
                     }else{
@@ -35,6 +34,7 @@
                         }else{
                             $cliente["0"]["situacao"] = "PAGO";
                         }
+                    
                         for($i = 0; $i < count($cliente); $i++){
                             echo "<tr>";
                             foreach($cliente[$i] as $key => $value){

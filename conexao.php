@@ -153,15 +153,13 @@
         public function pesquisarDescricao($pesquisa){
             $verificar = $this->pdo->query("SELECT * FROM pagar WHERE descricao = '$pesquisa'");
             if($verificar->rowCount() > 0){
-                $sql = $this->pdo->query("SELECT codigo, descricao, format(valor, 2, 'de_DE'), date_format(dt_vencimento, '%d/%m/%Y'), situacao FROM pagar WHERE codigo = '$pesquisa'");
+                $sql = $this->pdo->query("SELECT codigo, descricao, format(valor, 2, 'de_DE'), date_format(dt_vencimento, '%d/%m/%Y'), situacao FROM pagar WHERE descricao = '$pesquisa'");
                 $res = $sql->fetchAll(PDO::FETCH_ASSOC);
                 return $res;
             }else{
                 return $res = 0;
             }
         }
-        public function pesquisarValor($pesquisa){
-            
-        }
+       
         
     }
