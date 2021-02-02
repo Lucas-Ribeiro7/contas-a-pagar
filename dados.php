@@ -4,16 +4,24 @@
         <div class="base-corpo">
             <div class="pesquisa">
                 <form action="pesquisa.php" method="POST">
-                    <input type="text" name="pesquisa" placeholder="Digite uma descrição"> 
+                    <input type="radio" name="escolha" value="codigo">
+                    <label for="codigo">Codigo</label>
+                    <input type="radio" name="escolha" value="descricao">
+                    <label for="descricao">Descrição</label>
+                    <input type="radio" name="escolha" value="valor">
+                    <label for="valor">Valor</label>
+
+                    <input type="text" name="pesquisa">
+                    
                     <input type="submit" value="Buscar">
                 </form>
             </div>
             <br>
             <table>
-                <tr id="titulo">
+                <tr>
                     <td> <b>CÓDIGO</b> </td>
                     <td> <b>DESCRIÇÃO</b> </td>
-                    <td> <b>VALOR DA CONTA</b> </td>
+                    <td> <b>VALOR</b> </td>
                     <td> <b>DATA DE VENCIMENTO</b> </td>
                 </tr>
                 <?php

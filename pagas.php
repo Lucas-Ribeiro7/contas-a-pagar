@@ -10,10 +10,10 @@
             </div>
             <br>
             <table>
-                <tr id="titulo">
+                <tr>
                     <td> <b>CÓDIGO</b> </td>
                     <td> <b>DESCRIÇÃO</b> </td>
-                    <td> <b>VALOR DA CONTA</b> </td>
+                    <td> <b>VALOR</b> </td>
                     <td> <b>DATA DE VENCIMENTO</b> </td>
                 </tr>
                 <?php

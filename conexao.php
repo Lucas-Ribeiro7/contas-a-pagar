@@ -138,5 +138,23 @@
             $sql = $this->pdo->query("SELECT MAX(codigo) FROM `pagar`");
             return $sql->fetch(\PDO::FETCH_ASSOC);
         }
+
+        /*--------------------------Pesquisas---------------------*/
+        public function pesquisarCodigo($pesquisa){
+            $verificar = $this->pdo->query("SELECT * FROM pagar WHERE codigo = '$pesquisa'");
+            if($verificar->rowCount() > 0){
+                $sql = $this->pdo->query("SELECT codigo, descricao, format(valor, 2, 'de_DE'), date_format(dt_vencimento, '%d/%m/%Y'), situacao FROM pagar WHERE codigo = '$pesquisa'");
+                $res = $sql->fetchAll(PDO::FETCH_ASSOC);
+                return $res;
+            }else{
+                echo "<h3>[ATENÇÃO] Não existe nenhuma conta com este Codigo!!</h3>";
+            }
+        }
+        public function pesquisarDescricao($pesquisa){
+            
+        }
+        public function pesquisarValor($pesquisa){
+            
+        }
         
     }
