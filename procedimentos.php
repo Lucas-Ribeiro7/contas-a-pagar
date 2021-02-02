@@ -2,6 +2,20 @@
     
     <div class="home">
         <div class="base-corpo">
+            <div class="pesquisa">
+                <form action="pesquisa.php" method="POST">
+                    <input type="radio" name="escolha" value="codigo">
+                    <label for="codigo">Codigo</label>
+                    <input type="radio" name="escolha" value="descricao">
+                    <label for="descricao">Descrição</label>
+                    <input type="radio" name="escolha" value="valor">
+                    <label for="valor">Valor</label>
+
+                    <input type="text" name="pesquisa">
+                    
+                    <input type="submit" value="Buscar">
+                </form>
+            </div>
             <div>
                 <?php 
                     $soma_abertos = $p->somaAbertos();

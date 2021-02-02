@@ -7,7 +7,7 @@
                     $pesquisa = $_POST['pesquisa'];
                     switch($escolha){
                         case 'codigo' : 
-                            $cliente = $p->pesquisarCodigo($pesquisa);
+                            $cliente = $p->pesquisarCodigo($pesquisa);            
                             break;
                         case 'descricao' :
                             $cliente = $p->pesquisarDescricao($pesquisa);
@@ -27,7 +27,9 @@
                     <td><b>SITUAÇÃO</b></td>
                 </tr>
                     <?php
-                        var_dump($cliente["0"]["situacao"]);
+                    if($cliente == 0){
+                        echo "<h2>Não encontramos nenhuma conta</h2>";
+                    }else{
                         if($cliente["0"]["situacao"] == 1){
                             $cliente["0"]["situacao"] = "EM ABERTO";
                         }else{
@@ -40,6 +42,7 @@
                             }
                             echo "</tr>";
                         }
+                    }
                     ?>
                 </table>
             </div>
