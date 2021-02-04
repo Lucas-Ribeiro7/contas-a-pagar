@@ -4,14 +4,11 @@
         <div class="base-corpo">
             <div class="pesquisa">
                 <form action="pesquisa.php" method="POST">
-                    <input type="radio" name="escolha" value="codigo">
+                    <input type="radio" name="escolha" value="codigo" required>
                     <label for="codigo">Codigo</label>
-                    <input type="radio" name="escolha" value="descricao">
+                    <input type="radio" name="escolha" value="descricao" required>
                     <label for="descricao">Descrição</label>
-                   
-
-                    <input type="text" name="pesquisa">
-                    
+                    <input type="text" name="pesquisa" size="25px" required>   
                     <input type="submit" value="Buscar">
                 </form>
             </div>

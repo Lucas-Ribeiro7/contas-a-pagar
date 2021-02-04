@@ -42,7 +42,8 @@ div.home div.base-corpo h3{
     margin-top: 10px;
 }
 div.pesquisa{
-    text-align: right;
     border-radius: 3px;
     background: rgb(84, 87, 87);
+    padding: 10px;
+    text-align: right;
 }

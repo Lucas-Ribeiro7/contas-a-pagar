@@ -9,6 +9,11 @@
         //-----------------------------Inserir-----------------------
         public function inserirDados($codigo, $descricao, $valor, $vencimento, $situacao){
             $sql = $this->pdo->query("SELECT id FROM pagar WHERE codigo = '$codigo'");
+            $verificar_descricao = $this->pdo->query("SELECT * FROM pagar WHERE descricao = '$descricao'");
+            if($verificar_descricao->rowCount() > 0){
+                echo "<h3>Já existe uma conta com está Descrição.</h3>";
+                exit;
+            }
             if($sql->rowCount() > 0){
                 echo "<h3>Conta já cadastrada com este Código!</h3>";
             }else{
@@ -37,13 +42,13 @@
         }
         public function buscarDadosAbertos(){
             $res = array();
-            $cmd = $this->pdo->query("SELECT codigo, descricao, format(valor, 2, 'de_DE'), date_format(dt_vencimento, '%d/%m/%Y') FROM pagar WHERE situacao = true ORDER BY date_format(dt_vencimento, '%d/%m/%Y');");
+            $cmd = $this->pdo->query("SELECT codigo, descricao, format(valor, 2, 'de_DE'), date_format(dt_vencimento, '%d/%m/%Y') FROM pagar WHERE situacao = true ORDER BY dt_vencimento");
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
             return $res;
         }
         public function buscarDadosPagos(){
             $res = array();
-            $cmd = $this->pdo->query("SELECT codigo, descricao, format(valor, 2, 'de_DE'), date_format(dt_vencimento, '%d/%m/%Y') FROM pagar WHERE situacao = false ORDER BY date_format(dt_vencimento, '%d/%m/%')");
+            $cmd = $this->pdo->query("SELECT codigo, descricao, format(valor, 2, 'de_DE'), date_format(dt_vencimento, '%d/%m/%Y') FROM pagar WHERE situacao = false ORDER BY dt_vencimento");
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
             return $res;
         }

@@ -3,6 +3,7 @@
         <div class="home">
             <div class="base-corpo">
                 <?php
+                if(isset($_POST['escolha']) && isset($_POST['pesquisa'])){
                     $escolha = $_POST['escolha'];
                     $pesquisa = $_POST['pesquisa'];
                     
@@ -43,6 +44,7 @@
                             echo "</tr>";
                         }
                     }
+                }
                     ?>
                 </table>
             </div>

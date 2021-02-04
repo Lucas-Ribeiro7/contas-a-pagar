@@ -13,7 +13,7 @@
                     }
                     
                 ?>
-                <p>Descrição da Conta:<input type="text" name="descricao" required></p>
+                <p>Descrição da Conta:<input type="text" name="descricao" size="25px" required></p>
                 <p>Valor: <input type="text" name="valor" size="8px" required></p> 
                 <p>Data de Vencimento: <input type="date" name="vencimento" required></p>
                 
