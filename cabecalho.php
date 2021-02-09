@@ -8,7 +8,7 @@
 </head>
     <?php
         require_once 'conexao.php';
-        $p = new conexao("contas", "localhost", "root", "");
+        $p = new conexao("controle financeiro", "localhost", "root", "");
     ?>
 <body>
     <div class="menu">

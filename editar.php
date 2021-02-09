@@ -28,7 +28,7 @@
             <form action="processa_editar.php" method="POST">
                     <p>Código para identificação:<input type="number" name="codigo" value="<?php echo $codigo ?>" required></p>
                     <p>Descrição da Conta:<input type="text" name="descricao" value="<?php echo $descricao ?>" required></p>
-                    <p>Valor: <strong>(Obs: Se for valores quebrados. Ex: 14.52 - ".")</strong><input type="text" name="valor" value="<?php echo $valor ?>" required></p> 
+                    <p>Valor:<input type="text" name="valor" value="<?php echo $valor ?>" required></p> 
                     <p>Data de Vencimento: <input type="date" name="vencimento" value="<?php echo $vencimento ?>" required></p>
                     
                     <p>Situação</p>
