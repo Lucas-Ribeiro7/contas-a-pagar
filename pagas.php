@@ -3,7 +3,7 @@
     <div class="home">
         <div class="base-corpo">
             <br>
-            <h1>Contas em Aberto:</h1>
+            <h1>Contas Pagas:</h1>
             <table>
 
                 <tr>
@@ -14,7 +14,7 @@
                     <td colspan="2"> <b>ALTERAR</b> </td>
                 </tr>
                 <?php
-                    $dados = $p->buscarDadosAbertos();
+                    $dados = $p->buscarDadosPagos();
                     if(count($dados) > 0){
                         for($i = 0; $i < count($dados); $i++){
                             echo "<tr>";
