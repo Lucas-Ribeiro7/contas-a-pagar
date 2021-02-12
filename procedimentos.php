@@ -34,6 +34,7 @@
                 </form>
                     <?php
                         if(isset($_GET['excluir'])){
+                            $codigo = $_GET['codigo'];
                             $codigo = $_GET['excluir'];
                             $p->excluirConta($codigo);
                         }

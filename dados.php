@@ -14,11 +14,13 @@
             </div>
             <br>
             <table>
+
                 <tr>
                     <td> <b>CÓDIGO</b> </td>
                     <td> <b>DESCRIÇÃO</b> </td>
                     <td> <b>VALOR</b> </td>
                     <td> <b>DATA DE VENCIMENTO</b> </td>
+                    <td colspan="2"> <b>ALTERAR</b> </td>
                 </tr>
                 <?php
                     $dados = $p->buscarDadosAbertos();
@@ -26,15 +28,25 @@
                         for($i = 0; $i < count($dados); $i++){
                             echo "<tr>";
                             foreach($dados[$i] as $key => $value){
-                                    echo "<td>$value</td>";
+                                    echo "<td>$value</td>";        
                             }
-                            echo "</tr>";
+                            ?>
+                            <td> <a href="editar.php?codigo=<?php echo $dados[$i]["codigo"]; ?>">EDITAR</a> </td>
+                            <td> <a href="dados.php?codigo=<?php echo $dados[$i]["codigo"]; ?>">EXCLUIR</a> </td>
+                            <?php
+                            echo "</tr>";                
                         }
                     }else{
                         echo "<h2>Não existe nenhuma conta em aberto cadastrado</h2>";
                     }
+                    if(isset($_GET["codigo"])){
+                        $codigo = $_GET["codigo"];
+                        $p->excluirConta($codigo);
+                    }                           
                 ?>
+               
             </table>
+                
         </div>
     </div>
 </body>

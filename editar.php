@@ -1,7 +1,9 @@
     <?php include "cabecalho.php"; ?>
     
     <?php
+        if(isset($_POST['editar']) || isset($_POST['codigo']))
         $codigo_enviado = $_POST['editar'];
+        $codigo_enviado = $_POST['codigo'];
         $dados = $p->buscarDados($codigo_enviado);
         if(count($dados) == 0){
             //Usando JavaScript

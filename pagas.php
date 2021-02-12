@@ -19,6 +19,7 @@
                     <td> <b>DESCRIÇÃO</b> </td>
                     <td> <b>VALOR</b> </td>
                     <td> <b>DATA DE VENCIMENTO</b> </td>
+                    <td colspan="2"> <b>ALTERAR</b> </td>
                 </tr>
                 <?php
                     $dados = $p->buscarDadosPagos();
@@ -28,11 +29,19 @@
                             foreach($dados[$i] as $key => $value){
                                     echo "<td>$value</td>";
                             }
-                            echo "</td>";
+                            ?>
+                            <td> <a href="editar.php?codigo=<?php echo $dados[$i]["codigo"]; ?>">EDITAR</a> </td>
+                            <td> <a href="dados.php?codigo=<?php echo $dados[$i]["codigo"]; ?>">EXCLUIR</a> </td>
+                            <?php
+                            echo "</tr>"; 
                         }
                     }else{
                         echo "<h2>Não existe nenhuma conta paga cadastrada</h2>";
                     }
+                    if(isset($_GET["codigo"])){
+                        $codigo = $_GET["codigo"];
+                        $p->excluirConta($codigo);
+                    } 
                 ?>
             </table>
         </div>
