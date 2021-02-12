@@ -2,16 +2,6 @@
     
     <div class="home">
         <div class="base-corpo">
-            <div class="pesquisa">
-                <form action="pesquisa.php" method="POST">
-                    <input type="radio" name="escolha" value="codigo" required>
-                    <label for="codigo">Codigo</label>
-                    <input type="radio" name="escolha" value="descricao" required>
-                    <label for="descricao">Descrição</label>
-                    <input type="text" name="pesquisa" size="25px" required>   
-                    <input type="submit" value="Buscar">
-                </form>
-            </div>
             <div>
                 <?php 
                     $soma_abertos = $p->somaAbertos();
@@ -27,18 +17,6 @@
             </div>
             <div class="soma-total">
             <p>Soma de todas as contas: <strong><?php echo number_format($soma_total, 2, ",", "."); ?> Reais</strong></p>
-            </div>
-            <div class="excluir">
-                <form action="" method="GET">
-                    <p>Excluir a conta com o Código: <input type="number" name="excluir" required>  <input type="submit" value="Excluir"></p>
-                </form>
-                    <?php
-                        if(isset($_GET['excluir'])){
-                            $codigo = $_GET['codigo'];
-                            $codigo = $_GET['excluir'];
-                            $p->excluirConta($codigo);
-                        }
-                    ?>
             </div>
             <div class="editar">
                 <form action="editar.php" method="POST">

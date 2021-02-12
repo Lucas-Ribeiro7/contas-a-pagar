@@ -2,17 +2,8 @@
 
     <div class="home">
         <div class="base-corpo">
-            <div class="pesquisa">
-                <form action="pesquisa.php" method="POST">
-                    <input type="radio" name="escolha" value="codigo" required>
-                    <label for="codigo">Codigo</label>
-                    <input type="radio" name="escolha" value="descricao" required>
-                    <label for="descricao">Descrição</label>
-                    <input type="text" name="pesquisa" size="25px" required>   
-                    <input type="submit" value="Buscar">
-                </form>
-            </div>
             <br>
+            <h1>Contas em Aberto:</h1>
             <table>
 
                 <tr>
@@ -31,8 +22,8 @@
                                     echo "<td>$value</td>";        
                             }
                             ?>
-                            <td> <a href="editar.php?codigo=<?php echo $dados[$i]["codigo"]; ?>">EDITAR</a> </td>
-                            <td> <a href="dados.php?codigo=<?php echo $dados[$i]["codigo"]; ?>">EXCLUIR</a> </td>
+                            <td> <a href="editar.php?codigo=<?php echo $dados[$i]["codigo"]; ?>"> <u>EDITAR</u> </a> </td>
+                            <td> <a href="dados.php?codigo=<?php echo $dados[$i]["codigo"]; ?>"> <u>EXCLUIR</u> </a> </td>
                             <?php
                             echo "</tr>";                
                         }

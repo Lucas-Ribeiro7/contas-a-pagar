@@ -12,6 +12,17 @@
     ?>
 <body>
     <div class="menu">
+            <div class="pesquisa">
+                <form action="pesquisa.php" method="POST">
+                    <select name="escolha">
+                        <option value="descricao">Descrição</option>
+                        <option value="codigo">Codigo</option>
+                    </select>
+                    <input type="text" name="pesquisa" size="25px" required>   
+                    <input type="submit" value="Buscar">
+                </form>
+            </div>
+            <br>
         <a href="index.php">HOME</a> |
         <a href="dados.php">CONTAS A PAGAR</a> |
         <a href="cadastro.php">CADASTRAMENTO DE CONTAS</a> |
