@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="css/estilo.css">
     <title>Controle Financeiro</title>
-</head>
-    <?php
-        require_once 'conexao.php';
-        $p = new conexao("controle financeiro", "localhost", "root", "");
-    ?>
+</head> 
 <body>
+    <?php
+        include "Config/config.php";
+        include "vendor/autoload.php";
+        include "conexao.php";
+        $p = new conexao(BANCO, SERVIDOR, USUARIO, SENHA);
+    ?>
     <div class="menu">
             <div class="pesquisa">
                 <form action="pesquisa.php" method="POST">
@@ -23,10 +25,10 @@
                 </form>
             </div>
             <br>
-        <a href="index.php">HOME</a> |
-        <a href="dados.php">CONTAS A PAGAR</a> |
-        <a href="cadastro.php">CADASTRAMENTO DE CONTAS</a> |
-        <a href="pagas.php">CONTAS PAGAS</a> |
-        <a href="procedimentos.php">PROCEDIMENTOS</a>
+        <a href="<?php echo URL_BASE; ?>">HOME</a> |
+        <a href="<?php echo URL_BASE . 'dados.php'; ?>">CONTAS A PAGAR</a> |
+        <a href="<?php echo URL_BASE . 'cadastro.php'; ?>">CADASTRAMENTO DE CONTAS</a> |
+        <a href="<?php echo URL_BASE . 'pagas.php'; ?>">CONTAS PAGAS</a> |
+        <a href="<?php echo URL_BASE . 'procedimentos.php'; ?>">PROCEDIMENTOS</a>
     </div>
     <br>

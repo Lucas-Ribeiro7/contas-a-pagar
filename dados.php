@@ -22,8 +22,8 @@
                                     echo "<td>$value</td>";        
                             }
                             ?>
-                            <td> <a href="editar.php?codigo=<?php echo $dados[$i]["codigo"]; ?>"> <u>EDITAR</u> </a> </td>
-                            <td> <a href="dados.php?codigo=<?php echo $dados[$i]["codigo"]; ?>"> <u>EXCLUIR</u> </a> </td>
+                            <td> <a href="editar.php?codigo=<?php echo $dados[$i]["codigo"]; ?>" class="editar"> EDITAR </a> </td>
+                            <td> <a href="dados.php?codigo=<?php echo $dados[$i]["codigo"]; ?>" class="excluir"> EXCLUIR </a> </td>
                             <?php
                             echo "</tr>";                
                         }

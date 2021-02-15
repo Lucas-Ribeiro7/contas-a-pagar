@@ -1,0 +1,20 @@
+{
+    "name": "lucas-ribeiro7/contas",
+    "description": "Projeto para Controle Financeiro",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lucas Ribeiro",
+            "email": "caetanolucasribeiro@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        
+    },
+    "autoload": {
+        "psr-4": {
+            "contas a pagar\\": "contas a pagar/"
+        }
+    }
+}

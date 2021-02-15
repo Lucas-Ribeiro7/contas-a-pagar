@@ -1,6 +1,6 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background: url(img/fundo.jpg);
+    background: url(../img/fundo.jpg);
     background-size: 100%;
     width: 800px;
     margin: auto;
@@ -46,4 +46,20 @@ div.pesquisa{
     background: rgb(132, 132, 143);
     padding: 5px;
     text-align: right;
+}
+a.editar{
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(183, 209, 209);
+}
+a.excluir{
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(48, 58, 58);
+}
+a.editar:hover{
+    background-color: rgb(225, 236, 236);
+}
+a.excluir:hover{
+    background-color: rgb(87, 92, 92);
 }
