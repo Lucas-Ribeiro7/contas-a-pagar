@@ -55,7 +55,7 @@ a.editar{
 a.excluir{
     border-radius: 5px;
     padding: 5px;
-    background-color: rgb(48, 58, 58);
+    background-color: rgb(49, 61, 61);
 }
 a.editar:hover{
     background-color: rgb(225, 236, 236);
