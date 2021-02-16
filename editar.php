@@ -27,7 +27,7 @@
     ?>
     <div class="home">
         <div class="base-corpo">
-            <form action="processa_editar.php" method="POST">
+            <form action="processa.php" method="GET">
                     <p>Código para identificação:<input type="number" name="codigo" value="<?php echo $codigo ?>" required></p>
                     <p>Descrição da Conta:<input type="text" name="descricao" value="<?php echo $descricao ?>" required></p>
                     <p>Valor:<input type="text" name="valor" value="<?php echo $valor ?>" required></p> 

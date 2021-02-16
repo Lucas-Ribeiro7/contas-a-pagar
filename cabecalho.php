@@ -8,7 +8,7 @@
 </head> 
 <body>
     <?php
-        include "Config/config.php";
+        include "config/config.php";
         include "vendor/autoload.php";
         include "conexao.php";
         $p = new conexao(BANCO, SERVIDOR, USUARIO, SENHA);
