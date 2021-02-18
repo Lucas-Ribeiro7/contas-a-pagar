@@ -103,6 +103,7 @@
                 if($verificar->rowCount()==0){
                     echo "<h3>[ERRO] Essa conta não existe!!</h3>";
                 }else{
+                    $valor = str_replace(array(".",","),array(",","."),$valor);
                     $cmd = $this->pdo->query("UPDATE contas SET codigo = '$codigo', descricao = '$descricao', valor = '$valor', dt_vencimento = '$vencimento', situacao = '$situacao' WHERE codigo = '$codigo'");
                     echo "<h3>Edição realizada com sucesso!</h3>";
                 }
