@@ -1,4 +1,5 @@
 <?php
+
     class conexao{
         private $pdo;
 
@@ -167,5 +168,13 @@
                 return $res = 0;
             }
         }
-        
+
+        /* -------------------------- PAGUEI ----------------------- */
+        public function paguei($descricao){
+            $verificar = $this->pdo->query("SELECT * FROM contas WHERE descricao = '$descricao'");
+            if($verificar->rowCount() > 0){
+                $pago = $verificar;
+                $pago = $this->pdo->query("UPDATE contas SET situacao = 0 WHERE descricao = '$descricao'");
+            }
+        }
     }

@@ -11,7 +11,7 @@
                     <td> <b>DESCRIÇÃO</b> </td>
                     <td> <b>VALOR</b> </td>
                     <td> <b>DATA DE VENCIMENTO</b> </td>
-                    <td colspan="2"> <b>ALTERAR</b> </td>
+                    <td colspan="3"> <b>ALTERAR</b> </td>
                 </tr>
                 <?php
                     $dados = $p->buscarDadosAbertos();
@@ -22,8 +22,9 @@
                                     echo "<td>$value</td>";        
                             }
                             ?>
-                            <td> <a href="editar.php?codigo=<?php echo $dados[$i]["codigo"]; ?>" class="editar"> EDITAR </a> </td>
-                            <td> <a href="dados.php?codigo=<?php echo $dados[$i]["codigo"]; ?>" class="excluir"> EXCLUIR </a> </td>
+                            <td> <a href="editar.php?codigo=<?= $dados[$i]["codigo"]; ?>" class="editar"> EDITAR </a> </td>
+                            <td> <a href="dados.php?codigo=<?= $dados[$i]["codigo"]; ?>" class="excluir"> EXCLUIR </a> </td>
+                            <td> <a href="processa.php?descricao=<?= $dados[$i]["descricao"]; ?>" class="paguei"> PAGUEI </a> </td>
                             <?php
                             echo "</tr>";                
                         }
@@ -33,7 +34,8 @@
                     if(isset($_GET["codigo"])){
                         $codigo = $_GET["codigo"];
                         $p->excluirConta($codigo);
-                    }                           
+                    }      
+                                         
                 ?>
                
             </table>

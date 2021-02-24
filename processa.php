@@ -15,7 +15,7 @@
                     $situacao = 0;
                 }
                 $p->inserirDados($codigo, $descricao, $valor, $dt_vencimento, $situacao);
-            }else{
+            }else if(isset($_GET['codigo'])){
                 $codigo = $_GET['codigo'];
                 $descricao = $_GET['descricao'];
                 $valor = $_GET['valor'];
@@ -27,6 +27,11 @@
                     $situacao = 0;
                 }
                 $p->editarConta($codigo, $descricao, $valor, $dt_vencimento, $situacao);
+            }
+            if(isset($_GET['descricao'])){
+                $descricao = $descricao = $_GET['descricao'];
+                $p->paguei($descricao);
+                header('location: pagas.php');
             }
             ?>
         </div>

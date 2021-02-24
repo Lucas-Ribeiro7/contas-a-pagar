@@ -63,3 +63,11 @@ a.editar:hover{
 a.excluir:hover{
     background-color: rgb(87, 92, 92);
 }
+a.paguei{
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(63, 155, 77);
+}
+a.paguei:hover{
+    background-color: rgb(45, 80, 50);
+}
