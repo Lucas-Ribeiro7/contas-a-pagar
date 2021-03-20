@@ -29,6 +29,6 @@
         <a href="<?php echo URL_BASE . 'dados.php'; ?>">CONTAS A PAGAR</a> |
         <a href="<?php echo URL_BASE . 'cadastro.php'; ?>">CADASTRAMENTO DE CONTAS</a> |
         <a href="<?php echo URL_BASE . 'pagas.php'; ?>">CONTAS PAGAS</a> |
-        <a href="<?php echo URL_BASE . 'procedimentos.php'; ?>">PROCEDIMENTOS</a>
+        <a href="<?php echo URL_BASE . 'procedimentos.php'; ?>">SOMATORIO</a>
     </div>
     <br>

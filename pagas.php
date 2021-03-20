@@ -13,6 +13,43 @@
                     <td> <b>DATA DE VENCIMENTO</b> </td>
                     <td colspan="2"> <b>ALTERAR</b> </td>
                 </tr>
+                <div class="delete-pagas">
+                    <form action="" method="GET">
+                        <input type="submit" value="Apagar todos das contas PAGAS" name="delete-pagas">   
+                    </form>
+                    <?php
+                        if(isset($_GET['delete-pagas'])){
+                            echo "<form action='' method='GET'>";
+                            echo "<p>Tem certeza que deseja apagar tudo?</p>";
+                            echo "<input type='radio' name='sim-pagas' value= 'sim-pagas'>";
+                            echo "<label for='sim-pagas'>Sim, tenho certeza que eu quero apagar TODAS as contas PAGAS!</label><br>";
+                            echo "<br><input type='submit' name='resposta' value= 'Responder'>";
+                            echo "</form>";  
+                        }
+                        if(isset($_GET['sim-pagas'])){
+                            $p->deletePagas();
+                        }
+                    ?>
+                </div>
+                <div class="delete-tudo">
+                    <form action="" method="GET">
+                        <input type="submit" value="Apagar TODAS as CONTAS!" name="delete-tudo">
+                    </form>
+                    <?php
+                    if(isset($_GET['delete-tudo'])){
+                            echo "<form action='' method='GET'>";
+                            echo "<p>Tem certeza que deseja apagar tudo?</p>";
+                            echo "<input type='radio' name='sim-tudo' value= 'sim-tudo'>";
+                            echo "<label for='sim-tudo'>Sim, tenho certeza que eu quero apagar TUDO!</label><br>";
+                            echo "<br><input type='submit' name='resposta' value= 'Responder'>";
+                            echo "</form>";  
+                        }
+                        if(isset($_GET['sim-tudo'])){
+                            $p->deleteTotal();
+                        } 
+                    ?>
+                </div>
+                <br>
                 <?php
                     $dados = $p->buscarDadosPagos();
                     if(count($dados) > 0){
