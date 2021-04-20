@@ -1,4 +1,5 @@
 <?php
+    //SELECT * FROM `contas` WHERE descricao LIKE "%Faculdade%"
 
     class conexao{
         private $pdo;

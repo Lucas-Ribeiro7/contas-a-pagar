@@ -71,3 +71,8 @@ a.paguei{
 a.paguei:hover{
     background-color: rgb(45, 80, 50);
 }
+a.delete-tudo{
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(231, 36, 36);
+}

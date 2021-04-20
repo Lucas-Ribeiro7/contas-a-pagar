@@ -31,24 +31,6 @@
                         }
                     ?>
                 </div>
-                <div class="delete-tudo">
-                    <form action="" method="GET">
-                        <input type="submit" value="Apagar TODAS as CONTAS!" name="delete-tudo">
-                    </form>
-                    <?php
-                    if(isset($_GET['delete-tudo'])){
-                            echo "<form action='' method='GET'>";
-                            echo "<p>Tem certeza que deseja apagar tudo?</p>";
-                            echo "<input type='radio' name='sim-tudo' value= 'sim-tudo'>";
-                            echo "<label for='sim-tudo'>Sim, tenho certeza que eu quero apagar TUDO!</label><br>";
-                            echo "<br><input type='submit' name='resposta' value= 'Responder'>";
-                            echo "</form>";  
-                        }
-                        if(isset($_GET['sim-tudo'])){
-                            $p->deleteTotal();
-                        } 
-                    ?>
-                </div>
                 <br>
                 <?php
                     $dados = $p->buscarDadosPagos();
