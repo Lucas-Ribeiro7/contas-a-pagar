@@ -1,9 +1,10 @@
-<?php   
-    define("URL_BASE", "http://localhost/contas%20a%20Pagar/");
+<?php
+
+    define("URL_BASE", "http://localhost/Controle%20Financeiro/");
 
     define("SERVIDOR", "localhost");
 
-    define("BANCO", "controle financeiro");
+    define("BANCO", "controle_financeiro");
 
     define("USUARIO", "root");
 
