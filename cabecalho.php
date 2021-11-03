@@ -9,7 +9,6 @@
 <body>
     <?php
         include "config/config.php";
-        include "vendor/autoload.php";
         include "conexao.php";
         $p = new conexao(BANCO, SERVIDOR, USUARIO, SENHA);
     ?>

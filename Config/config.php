@@ -1,6 +1,6 @@
 <?php
 
-    define("URL_BASE", "http://localhost/Controle%20Financeiro/");
+    define("URL_BASE", "http://localhost/contas-a-pagar/");
 
     define("SERVIDOR", "localhost");
 
