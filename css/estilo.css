@@ -1,29 +1,17 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background: url(../img/fundo.jpg);
-    background-size: 100%;
     width: 800px;
     margin: auto;
+    background-color: rgb(98, 98, 110);
 }
-div.home{
+.home{
     width: 100%;
     padding: 20px 30px;
 }
-div.base-corpo{
-    padding: 20px 30px;
-    border-radius: 3px;
-    background:rgb(169, 160, 177);
-    box-shadow: 0px 0px 7px 0px black;
-}
-td, tr{
-    background-color: rgb(131, 120, 105);
-    padding: 10px;
-    width: 400px;
-}
-div.menu{
+.menu{
     background-color: rgb(140, 140, 155);
     width: 800px;
-    padding: 30px;
+    padding: 20px;
     margin: auto;
     color: rgb(67, 95, 104);
     text-align: center;
@@ -32,7 +20,14 @@ a{
     text-decoration: none;
     color: rgb(7, 6, 6);
 }
-div.home div.base-corpo h3{
+.menu-op{
+    padding: 10px;
+    color: rgb(7, 6, 6);
+}
+.menu-op:hover{
+    background: rgb(139, 139, 148);
+}
+.home .base-corpo h3{
     width: 100%;
     text-align: left;
     margin: auto;
@@ -40,6 +35,23 @@ div.home div.base-corpo h3{
     background: rgb(123, 129, 129);
     padding: 10px;
     margin-top: 10px;
+}
+.base-borda, .base-corpo{
+    padding: 30px 30px;
+    border-radius: 3px;
+    background: rgb(169, 160, 177);
+    box-shadow: 0px 0px 7px 0px black;
+}
+.botao{
+    padding: 10px;
+    color: rgb(195, 157, 228);
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px black;
+}
+td tr{
+    background-color: rgb(131, 120, 105);
+    padding: 10px;
+    width: 400px;
 }
 div.pesquisa{
     border-radius: 2px;
